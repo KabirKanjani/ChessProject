@@ -23,7 +23,7 @@ Work Left:UI Design
 Converting the PDF to PGNs(for Fetching Fens)
 
 
-https://user-images.githubusercontent.com/56652281/218317931-c2e7c43b-baa0-4c20-bf3c-7026cc6f0a72.mp4
+<video src="https://user-images.githubusercontent.com/56652281/218317931-c2e7c43b-baa0-4c20-bf3c-7026cc6f0a72.mp4"></video>
 <br>
 * The Video is edited because this process is taking a lot of time 
 <br>
@@ -31,7 +31,7 @@ Work Left : To make this process faster or find some way to make it asynchronous
 
 Converting PGNs to Fens
 <br>
-https://user-images.githubusercontent.com/56652281/218318614-c7359f87-a9f4-46b9-a6d9-42e9c239df75.mp4
+<video src="https://user-images.githubusercontent.com/56652281/218318614-c7359f87-a9f4-46b9-a6d9-42e9c239df75.mp4"></video>
 
 <br>
 

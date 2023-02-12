@@ -1,6 +1,6 @@
 # ChessProject
 Project Requirements. 
-1. Upload PDF.\n
+1. Upload PDF.<br>
 2.Get the PDF to backend.
 3.Convert the PDF pages into Individul Images. 
 4. Fetch Fen from those Images. 

@@ -1,26 +1,3 @@
-**Project Report for PC641 MSc (IT)**
-
-**Project Internship (2023)**
-
-![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 001](https://github.com/KabirKanjani/ChessProject/assets/56652281/a80ec434-606b-4495-bc44-ea0359d357a8)
-
-
-**Student Details:**
-
-Name: Kabir Kanjani
-
-Batch MSc IT 21-23
-
-Student ID: 202112025
-
-**Internship Details:**
-
-On campus Project : PDF2Tactics
-
-**Mentor**
-
-Prof Rahul Muthu.
-
 **Introduction.**
 
 Chess is quite a popular game played across the world by millions of

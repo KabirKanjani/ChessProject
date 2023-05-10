@@ -1,0 +1,173 @@
+<?php
+
+
+$pageno= $_GET['pageno'];
+$post_arr=array();
+$var="PNGs\cropped_image_0".$pageno.".png";
+$post_arr['data']=$var;
+echo json_encode($post_arr)
+?>
+<html>
+  <head>
+    <!-- Material Design Lite https://getmdl.io -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.2.0/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Load TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.5"> </script>
+    <script src="filters.js"></script>
+    <script src="chessbot_tensorflow_model.js"></script>
+    <script src="chessboard_detection.js"></script>
+
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47993702-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-47993702-2');
+    </script>
+    <style>
+      body{
+        display:none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Computer Vision Portion -->
+    <div >
+      <h3>Predicting Chessboard layouts from Screenshots using TensorflowJs</h3>
+      <p>
+        This is a much-simplified version of 
+        <a href="https://github.com/Elucidation/tensorflow_chessbot">Tensorflow Chessbot</a>, 
+        but running live completely in javascript with TensorflowJs.<br/>
+        You can upload a screenshot of a chessboard here, and it will predict the FEN notation and provide Lichess analysis/editor links.<br/>
+        <a href="https://github.com/Elucidation/ChessboardScreenshotHtml5">Source code</a>. If you run into issues or have suggestions, please add them as an <a href="https://github.com/Elucidation/ChessboardScreenshotHtml5/issues">issue here</a> (or check if there is already one and add a comment).
+      </p>
+      <p>For now, the chessboard must be centered, properly aligned and filling almost all of the image. Results will show at the bottom.</p>
+      <p id="loading_model_text"><i>Please wait, loading tensorflow model...</i></p>
+    </div>
+    <div id="post_model_loaded" style="display:none"> 
+      <p>
+        Input screenshot file: <input type="file" id="imageLoader" name="imageLoader" accept="image/*"/>
+      </p>
+      <img id='example_input_img' src=<?php echo $var?> width="321px" height="300px" style="display:none">
+      <canvas id="uploadedImage"></canvas>
+
+      <h3>Gradient Image</h3>
+      <p><canvas id="sobelCanvas"></canvas></p>
+
+      <!-- Machine Learning Portion -->
+      <div>
+        <h3>Input to machine learning model</h3>
+        <p><canvas id="resultCanvas"></canvas></p>      
+
+        <h3>Prediction</h3>
+        <div id="prediction_block" style="display:none">
+          <p>
+            Raw Predicted FEN: <div id='fen'>Waiting for image...</div>
+          </p>
+          <p>
+            ◇ White to play : <a href="" id="lichess_analysis_white">Analysis</a> | <a href="" id="lichess_editor_white">Editor</a><br/>
+            ◆ Black to play : <a href="" id="lichess_analysis_black">Analysis</a> | <a href="" id="lichess_editor_black">Editor</a><br/>
+          </p>
+          <p>
+            ▾ Links for when pieces are upside down on the board:<br/>
+            ◇ White to play : <a href="" id="lichess_analysis_white_inverted">Analysis</a> | <a href="" id="lichess_editor_white_inverted">Editor</a><br/>
+            ◆ Black to play : <a href="" id="lichess_analysis_black_inverted">Analysis</a> | <a href="" id="lichess_editor_black_inverted">Editor</a><br/>
+          </p>
+          <img id='visualize' src="">
+        </div>
+      </div>
+    </div>
+    <div id="result">Resi</div>
+  
+  </body>
+  <script type="text/javascript" >
+    // Load frozen model.
+    document.getElementById("example_input_img").onerror = function() {myFunction()};
+
+function myFunction() {
+  $.ajax({
+        url:' http://127.0.0.1:5000/GetFen',        
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify({'fen':"Fin"}),
+        dataType: "json",
+        type: 'POST',
+        success:function(res){
+          console.log(res);
+        }
+       })
+}
+    const frozen_graph = "frozen_model/tensorflowjs_model.pb";
+    const weights = "frozen_model/weights_manifest.json";
+
+    // global model.
+    var predictor;
+  
+    tf.loadFrozenModel(frozen_graph, weights).then(
+      function(result) {
+        predictor = result;
+        imageLoader.disabled = false; // Enable since model is loaded.
+
+        // Run on default image for now.
+        document.getElementById('post_model_loaded').style.display = 'block'
+        document.getElementById('loading_model_text').style.display = 'none'        
+        processLoadedImage(document.getElementById('example_input_img'));
+        chessboard = runPrediction();
+        var fen=chessboard.fen;
+        console.log('Predicted FEN: ', fen);        
+        var data_json={};
+        data_json.fen=fen;
+        updateUI(chessboard);
+        var url_string = (window.location.href).toLowerCase(); 
+        var url=new URL(url_string);
+        var pageno=Number(url.searchParams.get("pageno"));
+        pageno=pageno+1;
+        
+
+        $.ajax({
+        url:' http://127.0.0.1:5000/GetFen',        
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify(data_json),
+        dataType: "json",
+        type: 'POST',
+        success:function(res){
+          console.log(res);
+        }
+       })
+       window.location.href = "http://localhost/files/git/tensorflowjs/ChessboardFenTensorflowJs-master?pageno="+pageno;
+           });
+    console.log("Successfuly loaded tensorflow_chessbot model.");
+
+    // Set up image upload.
+    var imageLoader = document.getElementById('imageLoader');
+    imageLoader
+    imageLoader.disabled = true; // Disabled until model is loaded.
+    imageLoader.addEventListener('change', handleImage, false);
+
+
+
+    function handleImage(e){
+      var reader = new FileReader();
+      reader.onload = function(event){
+        var img = new Image();
+        img.onload = function() {
+          processLoadedImage(img);
+          chessboard = runPrediction();        
+          console.log('Predicted FEN: ', chessboard.fen);                    
+        updateUI(chessboard);
+        }
+        img.src = event.target.result;
+      }
+      reader.readAsDataURL(e.target.files[0]);     
+    }
+  </script>
+
+</html>

@@ -2,7 +2,8 @@
 
 **Project Internship (2023)**
 
-<img src="media/image1.png" style="width:3.1in;height:2.98727in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 001](https://github.com/KabirKanjani/ChessProject/assets/56652281/a80ec434-606b-4495-bc44-ea0359d357a8)
+
 
 **Student Details:**
 
@@ -55,11 +56,12 @@ the chess games to playable chess boards.
 
 That’s when it all started.
 
-<img src="media/image2.png" style="width:6.5in;height:3.14514in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 002](https://github.com/KabirKanjani/ChessProject/assets/56652281/2b37acfc-9787-4732-bb36-3d4a6054bd53)
+
 
 **Context Diagram**
 
-<img src="media/image3.png" style="width:5.625in;height:7.05in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 003](https://github.com/KabirKanjani/ChessProject/assets/56652281/b6f0cfa4-f9b4-47a6-81b7-cc4837b30557)
 
 **Scope Statement**
 
@@ -150,31 +152,37 @@ The Website consists of the following pages:
 
 1)Login Page/ Signup Page
 
-<img src="media/image2.png" style="width:6.5in;height:3.14514in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 002](https://github.com/KabirKanjani/ChessProject/assets/56652281/d0e39341-1b15-4f6d-be0c-7ec45512790c)
 
 2\) Dashboard
 
-<img src="media/image4.png" style="width:6.5in;height:3.16875in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 004](https://github.com/KabirKanjani/ChessProject/assets/56652281/3b9318b0-006e-429c-9287-e4211c2df97e)
+
 
 3\) PDF2Tactics -> File Upload Page
 
-<img src="media/image5.png" style="width:6.5in;height:3.16528in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 005](https://github.com/KabirKanjani/ChessProject/assets/56652281/26cb8a4a-ddef-4c24-b5c0-336eb8f5d1d2)
+
 
 4\) Loading Page
 
-<img src="media/image6.png" style="width:6.5in;height:3.2125in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 006](https://github.com/KabirKanjani/ChessProject/assets/56652281/8353d46f-d741-4d29-8e9e-caf4ea5b58ab)
+
 
 5\) Tactics Solving Page
 
-<img src="media/image7.png" style="width:6.5in;height:3.14861in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 007](https://github.com/KabirKanjani/ChessProject/assets/56652281/dfeb2623-80e3-4895-a969-d50fd789eea2)
+
 
 6\) Invalid Move
 
-<img src="media/image8.png" style="width:6.5in;height:3.16875in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 008](https://github.com/KabirKanjani/ChessProject/assets/56652281/b4032c5d-01e8-4e1b-900d-a1fa054f5fbb)
+
 
 7\) Valid Move
 
-<img src="media/image9.png" style="width:6.5in;height:3.15694in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 009](https://github.com/KabirKanjani/ChessProject/assets/56652281/5ada12ca-ff60-43b3-8d01-aff00601b1f2)
+
 
 **Programming Contribution**
 
@@ -247,22 +255,26 @@ Chessboard to Fen Repo:
 
 1.  Invalid Login
 
-> <img src="media/image10.png" style="width:6.5in;height:3.15764in" />
+> ![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 010](https://github.com/KabirKanjani/ChessProject/assets/56652281/558cc6d3-7a8b-494e-b433-db427f641bbc)
 
 2.  Valid Login
 
-> <img src="media/image11.png" style="width:6.5in;height:3.19236in" />
+> ![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 011](https://github.com/KabirKanjani/ChessProject/assets/56652281/7e3bf962-4036-4806-89f9-39369510770d)
+
 
 3.  Valid Move
 
-<img src="media/image12.png" style="width:6.5in;height:3.15694in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 009](https://github.com/KabirKanjani/ChessProject/assets/56652281/17389762-dfca-42e7-bed5-e511808f0a8e)
+
 
 4.  Invalid Move
 
-<img src="media/image13.png" style="width:6.5in;height:3.16875in" />
+![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 008](https://github.com/KabirKanjani/ChessProject/assets/56652281/e97824a6-6b69-4bb9-a936-ca50282c1aba)
+
 
 5.  Invalid File Format (other than
-    PDF)-<img src="media/image14.png" style="width:6.5in;height:3.15833in" />
+    PDF)-![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 012](https://github.com/KabirKanjani/ChessProject/assets/56652281/fd5ec929-93db-4856-9d79-2e4b98f68695)
+
 
 **9. Any Innovative contribution if has been made**
 

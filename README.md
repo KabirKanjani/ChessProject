@@ -272,8 +272,7 @@ Chessboard to Fen Repo:
 ![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 008](https://github.com/KabirKanjani/ChessProject/assets/56652281/e97824a6-6b69-4bb9-a936-ca50282c1aba)
 
 
-5.  Invalid File Format (other than
-    PDF)<br>![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 012](https://github.com/KabirKanjani/ChessProject/assets/56652281/fd5ec929-93db-4856-9d79-2e4b98f68695)
+5.  Invalid File Format (other than PDF)<br>![Aspose Words bdedca11-622a-4498-9077-c7950fd3d118 012](https://github.com/KabirKanjani/ChessProject/assets/56652281/fd5ec929-93db-4856-9d79-2e4b98f68695)
 
 
 **9. Any Innovative contribution if has been made**
